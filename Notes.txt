@@ -1,0 +1,16 @@
+Overview of MobX
+===================
+MobX is used for managing application State
+
+Core concepts Includes:
+=========================
+1.Actions =>any code which changes the State e.g Delete date , filtering data etc.
+2.State =>data which drives the application(includes the data managed by the applications and data related to the UI session)
+  =>In MobX the state is an observable , when the state changes , observers of the state are automatically triggered
+  =>State should contain the smallest amount od data possible with all other values being derived from the state.
+
+3.Derivations => Anything that is drived from the state  Eg: In shopping cart the total of cart should not be state and it should be drived by adding items in the state.
+    =>Computed values=>Where values are Computed from the state data when needed
+    =>Reactions => Always perform side-effects when state changes Eg: calling restful services for updating data 
+
+
