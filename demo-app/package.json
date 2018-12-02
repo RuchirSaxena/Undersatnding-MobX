@@ -114,11 +114,16 @@
     ]
   },
   "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "decoratorsBeforeExport": true
+        }
+      ]
+    ],
     "presets": [
       "react-app"
-    ],
-    "plugins": [
-      "transform-decorators-legacy"
     ]
   }
 }
