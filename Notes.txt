@@ -13,4 +13,35 @@ Core concepts Includes:
     =>Computed values=>Where values are Computed from the state data when needed
     =>Reactions => Always perform side-effects when state changes Eg: calling restful services for updating data 
 
+In MobX we tarck state changes with => Observables
+====================================================
+MobX uses the concept of observables for tracking changes to State.
+  Note: these observables are completely different form the observables of RxJS    
+=>An observable is an object whose properties can be tracked
+=>To track an observable  a function is exected when the observable changes , this fuction is created automatically by MobX and we don't need to create it seperately while working with MobX in our application.
+=>To start tracking an observable , a function is invoked and its code accesses and observable object's property which retrives the current values and register the function for tracking the observable.
+=>When the observable changes, the function is invoked again to use the new value.
+=>The tracking is setup through the function referrncing the observable object's property.
+=>Internally , MobX is using getter/setter style propertiesto run code when the property is accessed to configure tracking. 
+
+In MobX we make changes to the state with =>Actions
+====================================================
+=>Action functions make changes to observables.
+=>Functions may or may not be specifically marked as action functions.
+=>When MobX is exected in strict mode , only function marked as Actions can change the state
+=>After an action function changes an observable, any reactions which are tracking the observables are exected.
+=>Actions can be named to help debugging.
+=>Commonly , actions are passed into event handler for controls like button ; therefore , actions can be configured as bound to preseve the value of this.
+
+In MobX we use Computed values for below reasons =>
+==================================================
+There are 2 kinds of Derivations :Computed values and reactions
+As little state as possible should be stored , all other values should be derived
+=>A Computed value is a value drived from state
+=>Computed values can be thought of as spreadsheet calculations, when data on the spreadsheet is changed , the calculated values on the spreadsheet are updated.
+=>In the same sense , when observable values are changed, the Computed values are updated
+=>Like calculated spreadsheet values, Computed values are the result of a function
+=>The computed value function must be a pure function , and it must generate no side effects, including no errors can be thrown
+
+
 
