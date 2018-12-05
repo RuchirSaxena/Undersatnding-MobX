@@ -45,3 +45,13 @@ As little state as possible should be stored , all other values should be derive
 
 
 
+Setting up Mox with React to use decorators
+============================================
+npm i react-app-rewired
+npm i react-app-rewire-mobx
+npm i babel-plugin-styled-components
+
+
+
+
+
